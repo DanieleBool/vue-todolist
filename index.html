@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Vue To Do List</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- inizio header -->
+            <header>
+                <div class="container">
+                    <img class="logo" src="img/logo.png" alt="logo">
+                    <h1>Todo List</h1>
+                </div>
+            </header>
+            <!-- fine header -->
+            <!-- inizio main -->
+            <main>
+                <div class="container">
+                    <div class="add-todo">
+                        <input type="text" placeholder="Inserisci il testo" v-model="inputValue" @keyup.enter="addTodo()">
+                        <button @click="addTodo()">Aggiungi</button>
+                    </div>
+                    <div class="todos">
+                        <ul v-if="todosChristmas.length > 0">
+                            <li v-for="(task, index) in todosChristmas">
+                                <span @click="doneJs()" :class="todosChristmas.done == true ? 'done' : '' ">{{task}}</span><i class="fas fa-times" @click="removeTodo(index)"></i>
+                            </li>
+                        </ul>
+                        <h2 v-else>Non ci sono todos</h2>
+                    </div>
+                </div>        
+            </main>
+            <!-- fine main -->
+            
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
