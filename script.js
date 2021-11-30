@@ -48,13 +48,13 @@ const app = new Vue({
             this.todosChristmas.splice(index, 1);
         },
 
-        doneJs: function(){
-            if(this.todosChristmas.done == true){
-                return false;
-                
-            } else {
-                return true;
+        doneJs: function(index){
+            if(this.todosChristmas[index].done == true){
+                // return false;
+                this.todosChristmas[index].done = false;
+            }else{
+                this.todosChristmas[index].done = true;
             }
-        }
+        },
     },
 });

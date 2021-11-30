@@ -28,7 +28,7 @@
                     <div class="todos">
                         <ul v-if="todosChristmas.length > 0">
                             <li v-for="(task, index) in todosChristmas">
-                                <span @click="doneJs()" :class="todosChristmas.done == true ? 'done' : '' ">{{task}}</span><i class="fas fa-times" @click="removeTodo(index)"></i>
+                                <span @click="doneJs(index)" :class="todosChristmas[index].done == true ? 'done' : '' ">{{task}}</span><i class="fas fa-times" @click="removeTodo(index)"></i>
                             </li>
                         </ul>
                         <h2 v-else>Non ci sono todos</h2>
