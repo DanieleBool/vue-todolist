@@ -35,9 +35,10 @@ const app = new Vue({
     methods: {
         addTodo: function(){
             if(this.inputValue != "" ){
-                this.todosChristmas.push(this.inputValue);
+                // this.todosChristmas.push({task = this.inputValue, done = false});
+                this.todosChristmas.push(task = this.inputValue);
                 this.inputValue = "";
-            }else if(this.inputValue = " "){
+            }else if(this.inputValue == " "){
                 alert('no')
             }else{
 
